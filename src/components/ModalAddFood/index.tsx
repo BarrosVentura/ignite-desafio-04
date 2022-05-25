@@ -10,13 +10,13 @@ import { FoodObjectProps } from "../../types";
 interface ModalAddFoodProps {
   isOpen: boolean;
   setIsOpen: () => void;
-  handleAddFood: (food: FoodObjectProps | {}) => Promise<void>;
+  handleAddFood: (food: FoodObjectProps) => Promise<void>;
 }
 
 function ModalAddFood({ isOpen, setIsOpen, handleAddFood }: ModalAddFoodProps) {
   const formRef = createRef<FormHandles>();
 
-  async function handleSubmit(data: object) {
+  async function handleSubmit(data: FoodObjectProps) {
     await handleAddFood(data);
     setIsOpen();
   }

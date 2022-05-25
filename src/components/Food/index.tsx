@@ -7,7 +7,7 @@ import { FoodObjectProps } from "../../types";
 
 interface FoodProps {
   food: FoodObjectProps;
-  handleEditFood: (food: object) => void;
+  handleEditFood: (food: FoodObjectProps) => void;
   handleDelete: (id: number) => Promise<void>;
 }
 
