@@ -16,11 +16,11 @@ function Modal({ children, setIsOpen, isOpen }: ModalProps) {
   const prevProps = useRef<PrevProps>();
 
   useEffect(() => {
+    if (prevProps.current?.isOpen !== isOpen) {
+      setModalStatus(isOpen);
+    }
     if (prevProps.current) {
       prevProps.current.isOpen = isOpen;
-      if (prevProps.current.isOpen !== isOpen) {
-        setModalStatus(isOpen);
-      }
     }
   }, [isOpen]);
 
