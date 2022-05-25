@@ -6,6 +6,7 @@ import { Container } from "./styles";
 
 interface InputProps {
   name: string;
+  placeholder?: string;
 }
 
 function Input({ name, ...rest }: InputProps) {
